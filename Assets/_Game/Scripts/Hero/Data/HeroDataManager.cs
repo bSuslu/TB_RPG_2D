@@ -1,21 +1,21 @@
-using TB_RPG_2D.Hero.Config;
+using TB_RPG_2D.Settings;
 using UnityEngine;
 
 namespace TB_RPG_2D.Hero.Data
 {
     public class HeroDataManager : MonoBehaviour
     {
-        [SerializeField] private HeroConfig[] _configs;
-        
-        private HeroData[] _heroes;
+        public HeroData[] Datas { get; private set; }
         
         private void Start()
         {
-            _heroes = new HeroData[_configs.Length];
-            for (int i = 0; i < _configs.Length; i++)
+            var configs = SettingsProvider.Instance.HeroCollectionSettings.Configs;
+            Datas = new HeroData[configs.Length];
+            
+            for (int i = 0; i < configs.Length; i++)
             {
-                _heroes[i] = new HeroData(_configs[i]);
-                Debug.Log(_heroes[i].ToString());
+                Datas[i] = new HeroData(configs[i]);
+                Debug.Log(Datas[i].ToString());
             }
         }
     }

@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace TB_RPG_2D.Hero.Config
 {
-    [CreateAssetMenu(fileName = "HeroConfig", menuName = "Config/Hero", order = 0)]
+    [CreateAssetMenu(fileName = "HeroConfig", menuName = "Config/Hero")]
     public class HeroConfig : ScriptableObject
     {
         [field: SerializeField] public int Id { get; private set; }
