@@ -13,6 +13,11 @@ namespace TB_RPG_2D.Hero.UI.HeroCard
 
         private List<HeroCardController> _heroCardControllers = new ();
         
+        
+        private void Start()
+        {
+            SpawnHeroCards();
+        }
         private void SpawnHeroCards()
         {
             foreach (var data in HeroDataManager.Instance.Datas)
