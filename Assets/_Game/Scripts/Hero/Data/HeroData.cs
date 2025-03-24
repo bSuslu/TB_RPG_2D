@@ -6,13 +6,15 @@ namespace TB_RPG_2D.Hero.Data
     {
         public int Id => _config.Id;
         public string Name => _config.Name;
+
+        public float Health { get; private set; }
+        public float AttackPower { get; private set; }
         
-        public int Health { get; private set; }
-        public int Attack { get; private set; }
         public int Level { get; private set; }
 
         private readonly HeroConfig _config;
-        
+
+
         public HeroData(HeroConfig config)
         {
             _config = config;

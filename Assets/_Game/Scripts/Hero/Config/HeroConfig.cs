@@ -7,13 +7,13 @@ namespace TB_RPG_2D.Hero.Config
     {
         [field: SerializeField] public int Id { get; private set; }
         [field: SerializeField] public string Name { get; private set; }
-        [field: SerializeField] public int BaseHealth { get; private set; }
-        [field: SerializeField] public int BaseAttack { get; private set; }
+        [field: SerializeField] public float BaseHealth { get; private set; }
+        [field: SerializeField] public float BaseAttackPower { get; private set; }
 
 
         public override string ToString()
         {
-            return $"{Name} (ID: {Id} Health: {BaseHealth} Attack: {BaseAttack})";
+            return $"{Name} (ID: {Id} Health: {BaseHealth} Attack: {BaseAttackPower})";
         }
     }
 }
