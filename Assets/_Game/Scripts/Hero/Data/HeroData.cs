@@ -10,6 +10,7 @@ namespace TB_RPG_2D.Hero.Data
     {
         public int Id => _config.Id;
         public string Name => _config.Name;
+        public Sprite Icon => _config.Icon;
 
         public float Health { get; private set; }
         public float AttackPower { get; private set; }
