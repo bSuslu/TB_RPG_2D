@@ -2,11 +2,12 @@ using System.Collections.Generic;
 using System.Linq;
 using TB_RPG_2D.Services;
 using TB_RPG_2D.Settings;
+using TB_RPG_2D.Singleton;
 using UnityEngine;
 
 namespace TB_RPG_2D.Hero.Data
 {
-    public class HeroDataManager : MonoBehaviour
+    public class HeroDataManager : MonoSingleton<HeroDataManager>
     {
         public List<HeroData> Datas { get; private set; } = new();
         

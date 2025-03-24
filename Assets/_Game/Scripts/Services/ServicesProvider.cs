@@ -3,7 +3,7 @@ using TB_RPG_2D.Singleton;
 
 namespace TB_RPG_2D.Services
 {
-    public class ServicesProvider : Singleton<ServicesProvider>
+    public class ServicesProvider : MonoSingleton<ServicesProvider>
     {
         public HeroResourceService HeroResourceService { get; private set; }
 
