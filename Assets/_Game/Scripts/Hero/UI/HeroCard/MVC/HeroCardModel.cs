@@ -1,7 +1,7 @@
 using TB_RPG_2D.Hero.Data;
 using UnityEngine;
 
-namespace TB_RPG_2D.Hero.UI.HeroCard
+namespace TB_RPG_2D.Hero.UI.HeroCard.MVC
 {
     public class HeroCardModel
     {
@@ -9,7 +9,7 @@ namespace TB_RPG_2D.Hero.UI.HeroCard
         public string Name => _heroData.Name;
         public Sprite Icon => _heroData.Icon;
         
-        private HeroData _heroData;
+        private readonly HeroData _heroData;
         
         public HeroCardModel(HeroData heroData)
         {
