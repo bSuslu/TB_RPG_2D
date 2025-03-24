@@ -32,7 +32,8 @@ namespace TB_RPG_2D.Hero.Data
             for (int i = 0; i < configs.Length; i++)
             {
                 var persistentData = persistentDatas.FirstOrDefault(x => x.Id == configs[i].Id);
-                Datas[i] = persistentData == null ? new HeroData(configs[i]) : new HeroData(configs[i], persistentData);
+                HeroData heroData = persistentData == null ? new HeroData(configs[i]) : new HeroData(configs[i], persistentData);
+                Datas.Add(heroData);
                 Debug.Log(Datas[i].ToString());
             }
         }

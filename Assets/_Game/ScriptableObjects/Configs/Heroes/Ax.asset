@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Id>k__BackingField: 0
   <Name>k__BackingField: Ax
-  <BaseHealth>k__BackingField: 11
-  <BaseAttack>k__BackingField: 1
+  <BaseHealth>k__BackingField: 10
+  <BaseAttackPower>k__BackingField: 20

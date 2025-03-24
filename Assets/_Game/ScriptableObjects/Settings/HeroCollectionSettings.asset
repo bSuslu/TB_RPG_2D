@@ -13,7 +13,6 @@ MonoBehaviour:
   m_Name: HeroCollectionSettings
   m_EditorClassIdentifier: 
   <Configs>k__BackingField:
-  - {fileID: 0}
   - {fileID: 11400000, guid: e372617c2433e4b05935555f96a6f587, type: 2}
   - {fileID: 11400000, guid: a59b19207614b4ee1932c00d3a9e8ad2, type: 2}
   - {fileID: 11400000, guid: ccc801ad6e31e4f8ba51d868430d8221, type: 2}
