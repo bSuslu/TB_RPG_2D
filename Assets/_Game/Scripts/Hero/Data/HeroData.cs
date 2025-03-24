@@ -1,6 +1,8 @@
+using TB_RPG_2D.Hero.Attribute;
 using TB_RPG_2D.Hero.Config;
 using TB_RPG_2D.Hero.Resource;
 using TB_RPG_2D.Settings;
+using UnityEngine;
 
 namespace TB_RPG_2D.Hero.Data
 {
@@ -15,7 +17,7 @@ namespace TB_RPG_2D.Hero.Data
         public int Level { get; private set; }
 
         private readonly HeroConfig _config;
-
+        private readonly HeroAttributeCalculator _attributeCalculator;
 
         public HeroData(HeroConfig config)
         {
@@ -32,8 +34,8 @@ namespace TB_RPG_2D.Hero.Data
 
         private void CalculateLevelDependentAttributes()
         {
-            Health = _config.BaseHealth + Level * SettingsProvider.Instance.HeroAttributeSettings.LevelBaseHealthMultiplier;
-            AttackPower = _config.BaseAttackPower + Level * SettingsProvider.Instance.HeroAttributeSettings.LevelBaseAttackPowerMultiplier;
+            Health = _attributeCalculator.CalculateHealth(Level);
+            AttackPower = _attributeCalculator.CalculateAttackPower(Level);
         }
 
         public override string ToString()
