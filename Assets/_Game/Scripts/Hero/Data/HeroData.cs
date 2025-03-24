@@ -16,13 +16,15 @@ namespace TB_RPG_2D.Hero.Data
         public float AttackPower { get; private set; }
         
         public int Level { get; private set; }
+        public bool IsUnlocked => Level > 0;
 
         private readonly HeroConfig _config;
         private readonly HeroAttributeCalculator _attributeCalculator;
 
-        public HeroData(HeroConfig config)
+        public HeroData(HeroConfig config, bool isUnlocked = false)
         {
             _config = config;
+            Level = isUnlocked ? 1 : 0;
         }
 
         public HeroData(HeroConfig config, HeroPersistentData heroPersistentData)
