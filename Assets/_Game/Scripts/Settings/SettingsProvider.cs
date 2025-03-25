@@ -7,5 +7,7 @@ namespace TB_RPG_2D.Settings
     {
         [field: SerializeField] public HeroCollectionSettings HeroCollectionSettings { get; private set; }
         [field: SerializeField] public HeroAttributeSettings HeroAttributeSettings { get; private set; }
+        [field: SerializeField] public LongPressSettings LongPressSettings { get; private set; }
+
     }
 }
