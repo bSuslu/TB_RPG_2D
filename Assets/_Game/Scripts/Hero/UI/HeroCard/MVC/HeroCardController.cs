@@ -21,6 +21,8 @@ namespace TB_RPG_2D.Hero.UI.HeroCard.MVC
 
         private void OnHeroCardViewClicked()
         {
+            Debug.Log($"clicked on {_heroCardModel.Name} from controller");
+
             if (_cardSelectionState == CardSelectionState.NotSelectable)
             {
                 Debug.Log($"Hero Card {_heroCardModel.Name} is not selectable");

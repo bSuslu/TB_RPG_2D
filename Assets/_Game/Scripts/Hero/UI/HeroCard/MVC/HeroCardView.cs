@@ -21,6 +21,7 @@ namespace TB_RPG_2D.Hero.UI.HeroCard.MVC
 
         public void OnPointerClick(PointerEventData eventData)
         {
+            Debug.Log($"clicked on {_nameText.text} from view");
             OnClick?.Invoke();
         }
     }
