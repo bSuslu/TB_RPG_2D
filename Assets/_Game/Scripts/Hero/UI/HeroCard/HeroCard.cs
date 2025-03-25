@@ -1,5 +1,6 @@
-using System;
+using TB_RPG_2D.EventSystem.Events;
 using TB_RPG_2D.Hero.Data;
+using TB_RPG_2D.Services;
 using UnityEngine;
 
 namespace TB_RPG_2D.Hero.UI.HeroCard
@@ -8,19 +9,24 @@ namespace TB_RPG_2D.Hero.UI.HeroCard
     {
         [SerializeField] private HeroCardView _heroCardView;
         [SerializeField] private HeroCardLongPressController _heroCardLongPressController;
-
-        private HeroCardModel _heroCardModel;
+        
         public HeroData HeroData { get; private set; }
-
-        private CardSelectionState _cardSelectionState;
-        public Action<int, CardSelectionState> OnClick { get; set; }
+        
+        
+        private HeroCardClickedEvent _clickedEvent;
+        private HeroCardModel _heroCardModel;
+        private HeroSelectionService _heroSelectionService;
+        private bool _isSelected;
 
         public void SetData(HeroData heroData)
         {
             HeroData = heroData;
-
+            _heroSelectionService = ServicesProvider.Instance.HeroSelectionService;
+            
+            _clickedEvent = new HeroCardClickedEvent(this);
+            
             _heroCardModel = new HeroCardModel(heroData);
-
+            
             _heroCardView.SetModel(_heroCardModel);
             _heroCardView.OnClick += OnHeroCardViewClicked;
 
@@ -29,15 +35,31 @@ namespace TB_RPG_2D.Hero.UI.HeroCard
 
         private void OnHeroCardViewClicked()
         {
-            Debug.Log($"clicked on {_heroCardModel.Name} from controller");
-
-            if (_cardSelectionState == CardSelectionState.NotSelectable)
-            {
-                Debug.Log($"Hero Card {_heroCardModel.Name} is not selectable");
+            if (!_heroCardModel.IsUnlocked)
                 return;
-            }
 
-            OnClick?.Invoke(_heroCardModel.Id, _cardSelectionState);
+            if (_heroCardLongPressController.IsLongPressActive)
+                return;
+
+            if (_isSelected)
+            {
+                _heroSelectionService.DeselectHeroCard(this);
+                Deselect();
+            }
+            else if (_heroSelectionService.TryAddHeroCardToSelection(this))
+            {
+                Select();
+            }
+        }
+
+        private void Deselect()
+        {
+            _isSelected = false;
+        }
+
+        private void Select()
+        {
+            _isSelected = true;
         }
 
         public void Dispose()
