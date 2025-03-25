@@ -19,18 +19,21 @@ namespace TB_RPG_2D.Hero.Data
         public bool IsUnlocked => Level > 0;
 
         private readonly HeroConfig _config;
+        
+        // TODO: inject and update methods
         private readonly HeroAttributeCalculator _attributeCalculator;
 
         public HeroData(HeroConfig config, bool isUnlocked = false)
         {
             _config = config;
+            _attributeCalculator = new HeroAttributeCalculator(_config);
             Level = isUnlocked ? 1 : 0;
         }
 
         public HeroData(HeroConfig config, HeroPersistentData heroPersistentData)
         {
             _config = config;
-
+            _attributeCalculator = new HeroAttributeCalculator(_config);
             Level = heroPersistentData.Level;
             CalculateLevelDependentAttributes();
         }
