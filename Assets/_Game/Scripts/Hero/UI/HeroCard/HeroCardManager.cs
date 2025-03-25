@@ -18,6 +18,7 @@ namespace TB_RPG_2D.Hero.UI.HeroCard
         {
             SpawnHeroCards();
         }
+        
         private void SpawnHeroCards()
         {
             foreach (var data in HeroDataManager.Instance.Datas)
@@ -27,7 +28,15 @@ namespace TB_RPG_2D.Hero.UI.HeroCard
                 HeroCardView view = Instantiate(_heroCardViewPrefab, _parentTransform);
                 view.SetModel(new HeroCardModel(data));
 
-                HeroCardController controller = new HeroCardController(model, view);
+                _heroCardControllers.Add(new HeroCardController(model, view));
+            }
+        }
+
+        private void OnDestroy()
+        {
+            foreach (var controller in _heroCardControllers)
+            {
+                controller.Dispose();
             }
         }
     }
