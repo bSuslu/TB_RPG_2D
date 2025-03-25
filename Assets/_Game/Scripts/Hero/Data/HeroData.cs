@@ -15,6 +15,7 @@ namespace TB_RPG_2D.Hero.Data
         public float Health { get; private set; }
         public float AttackPower { get; private set; }
         
+        public int Experience { get; private set; }
         public int Level { get; private set; }
         public bool IsUnlocked => Level > 0;
 
@@ -27,6 +28,7 @@ namespace TB_RPG_2D.Hero.Data
         {
             _config = config;
             _attributeCalculator = new HeroAttributeCalculator(_config);
+            Experience = 0;
             Level = isUnlocked ? 1 : 0;
         }
 
@@ -34,6 +36,7 @@ namespace TB_RPG_2D.Hero.Data
         {
             _config = config;
             _attributeCalculator = new HeroAttributeCalculator(_config);
+            Experience = heroPersistentData.Experience;
             Level = heroPersistentData.Level;
             CalculateLevelDependentAttributes();
         }
