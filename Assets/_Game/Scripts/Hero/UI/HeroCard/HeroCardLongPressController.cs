@@ -35,7 +35,7 @@ namespace TB_RPG_2D.Hero.UI.HeroCard
             if (!_data.IsUnlocked)
                 return;
             
-            EventBus<HeroStatsPopupCalledEvent>.Publish(new HeroStatsPopupCalledEvent
+            EventBus<HeroAttributePopupCalledEvent>.Publish(new HeroAttributePopupCalledEvent
                 (true, _data, _popupPositionTransform.position,false));
             
             IsLongPressActive = true;
@@ -46,7 +46,7 @@ namespace TB_RPG_2D.Hero.UI.HeroCard
             if (!_data.IsUnlocked)
                 return;
             
-            EventBus<HeroStatsPopupCalledEvent>.Publish(new HeroStatsPopupCalledEvent
+            EventBus<HeroAttributePopupCalledEvent>.Publish(new HeroAttributePopupCalledEvent
                 (false, _data, _popupPositionTransform.position,false));
             IsLongPressActive = false;
         }

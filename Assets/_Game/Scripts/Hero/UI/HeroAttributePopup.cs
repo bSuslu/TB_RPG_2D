@@ -18,21 +18,21 @@ namespace TB_RPG_2D.Hero.UI
         [SerializeField] private TextMeshProUGUI _heroExperienceStatText;
         [SerializeField] private TextMeshProUGUI _heroLevelStatText;
 
-        private EventBinding<HeroStatsPopupCalledEvent> _heroStatsPopupCalledEventBinding;
+        private EventBinding<HeroAttributePopupCalledEvent> _heroStatsPopupCalledEventBinding;
 
         public override void Init( )
         {
             base.Init();
-            _heroStatsPopupCalledEventBinding = new EventBinding<HeroStatsPopupCalledEvent>(OnHeroStatsPopupCalled);
-            EventBus<HeroStatsPopupCalledEvent>.Subscribe(_heroStatsPopupCalledEventBinding);
+            _heroStatsPopupCalledEventBinding = new EventBinding<HeroAttributePopupCalledEvent>(OnHeroStatsPopupCalled);
+            EventBus<HeroAttributePopupCalledEvent>.Subscribe(_heroStatsPopupCalledEventBinding);
         }
 
-        private void OnHeroStatsPopupCalled(HeroStatsPopupCalledEvent heroStatsPopupCalledEvent)
+        private void OnHeroStatsPopupCalled(HeroAttributePopupCalledEvent heroAttributePopupCalledEvent)
         {
-            if (heroStatsPopupCalledEvent.Activate)
+            if (heroAttributePopupCalledEvent.Activate)
             {
-                Activate(heroStatsPopupCalledEvent.HeroData, heroStatsPopupCalledEvent.Position,
-                    heroStatsPopupCalledEvent.IsCalledFromWorldSpace);
+                Activate(heroAttributePopupCalledEvent.HeroData, heroAttributePopupCalledEvent.Position,
+                    heroAttributePopupCalledEvent.IsCalledFromWorldSpace);
             }
             else
             {
@@ -75,7 +75,7 @@ namespace TB_RPG_2D.Hero.UI
         
         public override void Dispose()
         {
-            EventBus<HeroStatsPopupCalledEvent>.Unsubscribe(_heroStatsPopupCalledEventBinding);
+            EventBus<HeroAttributePopupCalledEvent>.Unsubscribe(_heroStatsPopupCalledEventBinding);
         }
     }
 }
