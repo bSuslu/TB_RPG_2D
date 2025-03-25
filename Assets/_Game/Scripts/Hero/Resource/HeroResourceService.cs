@@ -18,16 +18,19 @@ namespace TB_RPG_2D.Hero.Resource
                 new HeroPersistentData()
                 {
                     Id = 0,
+                    Experience = 0,
                     Level = 10,
                 },
                 new HeroPersistentData()
                 {
                     Id = 1,
+                    Experience = 1,
                     Level = 20,
                 },
                 new HeroPersistentData()
                 {
                     Id = 2,
+                    Experience = 2,
                     Level = 30,
                 }
             };
