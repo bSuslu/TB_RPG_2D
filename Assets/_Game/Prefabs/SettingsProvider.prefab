@@ -47,3 +47,4 @@ MonoBehaviour:
   _doNotDestroyOnLoad: 0
   <HeroCollectionSettings>k__BackingField: {fileID: 11400000, guid: aef91be2126d448d7aaf0c2b331671ec, type: 2}
   <HeroAttributeSettings>k__BackingField: {fileID: 11400000, guid: 82baa5d8da2a74960bd290d76381aec4, type: 2}
+  <LongPressSettings>k__BackingField: {fileID: 11400000, guid: 8ef22f6056af249c6a01ee5468c0641d, type: 2}

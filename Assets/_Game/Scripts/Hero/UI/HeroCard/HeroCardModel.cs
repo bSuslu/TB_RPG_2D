@@ -1,7 +1,7 @@
 using TB_RPG_2D.Hero.Data;
 using UnityEngine;
 
-namespace TB_RPG_2D.Hero.UI.HeroCard.MVC
+namespace TB_RPG_2D.Hero.UI.HeroCard
 {
     public class HeroCardModel
     {
