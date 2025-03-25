@@ -1,4 +1,4 @@
-namespace TB_RPG_2D.Hero.Resource
+namespace TB_RPG_2D.Hero.PersistentData
 {
     public class HeroPersistentData
     {

@@ -1,6 +1,6 @@
 using TB_RPG_2D.Hero.Attribute;
 using TB_RPG_2D.Hero.Config;
-using TB_RPG_2D.Hero.Resource;
+using TB_RPG_2D.Hero.PersistentData;
 using TB_RPG_2D.Settings;
 using UnityEngine;
 

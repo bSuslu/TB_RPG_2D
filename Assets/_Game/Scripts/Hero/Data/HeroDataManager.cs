@@ -14,17 +14,8 @@ namespace TB_RPG_2D.Hero.Data
         private void Start()
         {
             PopulateDatas();
-            LogDatas();
         }
-
-        private void LogDatas()
-        {
-            foreach (var data in Datas)
-            {
-                Debug.Log(data.ToString());
-            }
-        }
-
+        
         private void PopulateDatas()
         {
             var configs = SettingsProvider.Instance.HeroCollectionSettings.Configs;
@@ -39,7 +30,6 @@ namespace TB_RPG_2D.Hero.Data
                 var persistentData = persistentDatas.FirstOrDefault(x => x.Id == configs[i].Id);
                 HeroData heroData = persistentData == null ? new HeroData(configs[i], isUnlocked) : new HeroData(configs[i], persistentData);
                 Datas.Add(heroData);
-                Debug.Log(Datas[i].ToString());
             }
         }
     }
