@@ -1,4 +1,5 @@
 using System;
+using TB_RPG_2D.UI.Controller;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -8,6 +9,7 @@ namespace TB_RPG_2D.Hero.UI.HeroCard.MVC
 {
     public class HeroCardView : MonoBehaviour, IPointerClickHandler
     {
+        [field: SerializeField] public LongPressDetector LongPressDetector { get; private set; }
         [SerializeField] private TextMeshProUGUI _nameText;
         [SerializeField] private Image _iconImage;
         

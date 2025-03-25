@@ -1,4 +1,5 @@
 using System;
+using TB_RPG_2D.UI.Controller;
 using UnityEngine;
 
 namespace TB_RPG_2D.Hero.UI.HeroCard.MVC
@@ -7,16 +8,30 @@ namespace TB_RPG_2D.Hero.UI.HeroCard.MVC
     {
         private readonly HeroCardView _heroCardView;
         private readonly HeroCardModel _heroCardModel;
+        private readonly LongPressDetector _longPressDetector;
         private CardSelectionState _cardSelectionState;
-
+        
         public Action<int, CardSelectionState> OnClick { get; set; }
 
         public HeroCardController(HeroCardModel heroCardModel, HeroCardView heroCardView)
         {
             _heroCardModel = heroCardModel;
             _heroCardView = heroCardView;
-
+            _longPressDetector = _heroCardView.LongPressDetector;
+            
             _heroCardView.OnClick += OnHeroCardViewClicked;
+            _longPressDetector.OnLongPressed += OnLongPressed;
+            _longPressDetector.OnLongPressReleased += OnLongPressReleased;
+        }
+
+        private void OnLongPressReleased()
+        {
+            throw new NotImplementedException();
+        }
+
+        private void OnLongPressed()
+        {
+            throw new NotImplementedException();
         }
 
         private void OnHeroCardViewClicked()
@@ -35,6 +50,8 @@ namespace TB_RPG_2D.Hero.UI.HeroCard.MVC
         public void Dispose()
         {
             _heroCardView.OnClick -= OnHeroCardViewClicked;
+            _longPressDetector.OnLongPressed -= OnLongPressed;
+            _longPressDetector.OnLongPressReleased -= OnLongPressReleased;
         }
     }
 }
