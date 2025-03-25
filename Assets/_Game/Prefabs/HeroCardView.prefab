@@ -162,7 +162,7 @@ GameObject:
   - component: {fileID: 3868362238900931428}
   - component: {fileID: 2522914078848293739}
   m_Layer: 5
-  m_Name: HeroCard
+  m_Name: HeroCardView
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
