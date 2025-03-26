@@ -1,4 +1,3 @@
-using TB_RPG_2D.EventSystem.Events;
 using TB_RPG_2D.Hero.Data;
 using TB_RPG_2D.Services;
 using UnityEngine;
@@ -12,8 +11,6 @@ namespace TB_RPG_2D.Hero.UI.HeroCard
         
         public HeroData HeroData { get; private set; }
         
-        
-        private HeroCardClickedEvent _clickedEvent;
         private HeroCardModel _heroCardModel;
         private HeroSelectionService _heroSelectionService;
         private bool _isSelected;
@@ -22,8 +19,6 @@ namespace TB_RPG_2D.Hero.UI.HeroCard
         {
             HeroData = heroData;
             _heroSelectionService = ServicesProvider.Instance.HeroSelectionService;
-            
-            _clickedEvent = new HeroCardClickedEvent(this);
             
             _heroCardModel = new HeroCardModel(heroData);
             

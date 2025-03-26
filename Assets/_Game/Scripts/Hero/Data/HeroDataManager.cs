@@ -3,7 +3,6 @@ using System.Linq;
 using TB_RPG_2D.Services;
 using TB_RPG_2D.Settings;
 using TB_RPG_2D.Singleton;
-using UnityEngine;
 
 namespace TB_RPG_2D.Hero.Data
 {

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7160624853250891025}
   - component: {fileID: 8239862697979783558}
   m_Layer: 5
-  m_Name: HeroAttributePopup
+  m_Name: HeroAttributesPopup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
