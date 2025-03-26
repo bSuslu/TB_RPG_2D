@@ -50,11 +50,13 @@ namespace TB_RPG_2D.Hero.UI.HeroCard
         private void Deselect()
         {
             _isSelected = false;
+            _heroCardView.Deselect();
         }
 
         private void Select()
         {
             _isSelected = true;
+            _heroCardView.Select();
         }
 
         public void Dispose()

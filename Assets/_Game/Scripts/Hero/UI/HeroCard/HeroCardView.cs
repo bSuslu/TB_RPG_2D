@@ -10,6 +10,7 @@ namespace TB_RPG_2D.Hero.UI.HeroCard
     {
         [SerializeField] private TextMeshProUGUI _nameText;
         [SerializeField] private Image _iconImage;
+        [SerializeField] private GameObject _selectedIndicator;
         
         public Action OnClick { get; set; }
         
@@ -21,6 +22,16 @@ namespace TB_RPG_2D.Hero.UI.HeroCard
         public void OnPointerClick(PointerEventData eventData)
         {
             OnClick?.Invoke();
+        }
+
+        public void Deselect()
+        {
+            _selectedIndicator.SetActive(false);
+        }
+
+        public void Select()
+        {
+            _selectedIndicator.SetActive(true);
         }
     }
 }
