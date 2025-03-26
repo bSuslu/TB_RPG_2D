@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace TB_RPG_2D.Hero.UI
 {
-    public class TargetHeroSelectionTextController : MonoBehaviour
+    public class TargetHeroCardSelectionPanel : MonoBehaviour
     {
         [SerializeField] private TextMeshProUGUI _textValue;
 
