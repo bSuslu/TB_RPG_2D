@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 384375362714807856}
   - component: {fileID: 8814895156474409730}
   - component: {fileID: 3211479592305277600}
+  - component: {fileID: 5947120823754065992}
   m_Layer: 5
   m_Name: EnterBattleButton
   m_TagString: Untagged
@@ -134,6 +135,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3cf97ace671d44f49972a22e3381014, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5947120823754065992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3441351105261920053}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eef22e96b2f844270b4dc29be0920a6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _scene: 2
+  _button: {fileID: 8814895156474409730}
 --- !u!1 &5760236197331061673
 GameObject:
   m_ObjectHideFlags: 0

@@ -4,6 +4,7 @@ using TB_RPG_2D.UI.Core;
 
 namespace TB_RPG_2D.UI.Handler
 {
+    // TODO: can be event channel for event base activations
     public class BattleButtonActivationHandler : UIEntity
     {
         private EventBinding<HeroSelectionCompleteStateChangedEvent> _heroSelectionCompleteStateChangedEventBinding;
