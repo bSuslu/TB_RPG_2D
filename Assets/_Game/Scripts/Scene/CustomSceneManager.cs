@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using TB_RPG_2D.EventSystem;
+using TB_RPG_2D.EventSystem.Events;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -11,9 +13,24 @@ namespace TB_RPG_2D.Scene
         private bool _isLoading;
         private readonly HashSet<string> _cachedSceneNames = new();
         
+        private EventBinding<LoadSceneRequestEvent> _loadSceneRequestEventBinding;
+        
         private void Awake()
         {
             CacheBuildScenes();
+            
+            _loadSceneRequestEventBinding = new EventBinding<LoadSceneRequestEvent>(OnLoadSceneRequest);
+            EventBus<LoadSceneRequestEvent>.Subscribe(_loadSceneRequestEventBinding);
+        }
+        
+        private void OnDestroy()
+        {
+            EventBus<LoadSceneRequestEvent>.Unsubscribe(_loadSceneRequestEventBinding);
+        }
+
+        private void OnLoadSceneRequest(LoadSceneRequestEvent loadSceneRequestEvent)
+        {
+            LoadScene(loadSceneRequestEvent.Scene);
         }
 
         private void Start()
