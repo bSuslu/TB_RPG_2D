@@ -12,7 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c4a61066a5e4b95a36f15ec7f4d5520, type: 3}
   m_Name: HeroCollectionSettings
   m_EditorClassIdentifier: 
+  <InitialUnlockedHeroCount>k__BackingField: 3
   <Configs>k__BackingField:
   - {fileID: 11400000, guid: e372617c2433e4b05935555f96a6f587, type: 2}
+  - {fileID: 11400000, guid: a7bfc1385afbb4f808c9717372788700, type: 2}
   - {fileID: 11400000, guid: a59b19207614b4ee1932c00d3a9e8ad2, type: 2}
+  - {fileID: 11400000, guid: 0e8e94611cca54db0bdc32ab906ac7e9, type: 2}
+  - {fileID: 11400000, guid: 0f0ea86c1ab954cbe95ae999ac87f223, type: 2}
   - {fileID: 11400000, guid: ccc801ad6e31e4f8ba51d868430d8221, type: 2}
