@@ -31,5 +31,7 @@ namespace TB_RPG_2D.Hero.Data
                 Datas.Add(heroData);
             }
         }
+        
+        public HeroData GetHeroDataById(int id) => Datas.FirstOrDefault(x => x.Id == id);
     }
 }
