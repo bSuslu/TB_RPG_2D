@@ -22,13 +22,12 @@ namespace TB_RPG_2D.Hero.Data
             
             int initialUnlockedHeroCount = SettingsProvider.Instance.HeroCollectionSettings.InitialUnlockedHeroCount;
             
-            
             for (int i = 0; i < configs.Length; i++)
             {
                 bool isUnlocked = i < initialUnlockedHeroCount;
                 var persistentData = persistentDatas.FirstOrDefault(x => x.Id == configs[i].Id);
-                HeroData heroData = persistentData == null ? new HeroData(configs[i], isUnlocked) : new HeroData(configs[i], persistentData);
-                Datas.Add(heroData);
+                HeroData data = persistentData == null ? new HeroData(configs[i], isUnlocked) : new HeroData(configs[i], persistentData);
+                Datas.Add(data);
             }
         }
         

@@ -10,11 +10,5 @@ namespace TB_RPG_2D.Hero.Config
         [field: SerializeField] public float BaseHealth { get; private set; }
         [field: SerializeField] public float BaseAttackPower { get; private set; }
         [field: SerializeField] public Sprite Icon { get; private set; }
-
-
-        public override string ToString()
-        {
-            return $"{Name} (ID: {Id} Health: {BaseHealth} Attack: {BaseAttackPower})";
-        }
     }
 }
