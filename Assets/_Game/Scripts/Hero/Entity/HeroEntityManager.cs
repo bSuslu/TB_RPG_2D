@@ -10,14 +10,19 @@ namespace TB_RPG_2D.Hero.Entity
         [SerializeField] private List<Transform> _entityParents = new ();
         [SerializeField] private HeroEntity _heroEntityPrefab;
 
-        public void CreateHeroEntity(HeroData heroData)
+        private void Start()
+        {
+            CreateHeroEntities();
+        }
+
+        private void CreateHeroEntities()
         {
             List<int> entityIds = ServicesProvider.Instance.HeroSelectionService.SelectedHeroIds;
             for (int i = 0; i < entityIds.Count; i++)
             {
                 HeroData data = HeroDataManager.Instance.GetHeroDataById(entityIds[i]);
                 HeroEntity heroEntity = Instantiate(_heroEntityPrefab, _entityParents[i]);
-                // heroEntity.SetData(data);
+                heroEntity.SetData(data);
             }
         }
     }

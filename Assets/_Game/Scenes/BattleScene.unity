@@ -342,7 +342,7 @@ MonoBehaviour:
   - {fileID: 2080196318}
   - {fileID: 636160024}
   - {fileID: 1089755615}
-  _heroEntityPrefab: {fileID: 0}
+  _heroEntityPrefab: {fileID: 4009288808515995397, guid: 8d1fc7dde48f54101b6c8d1030a0042a, type: 3}
 --- !u!4 &1182621241
 Transform:
   m_ObjectHideFlags: 0
