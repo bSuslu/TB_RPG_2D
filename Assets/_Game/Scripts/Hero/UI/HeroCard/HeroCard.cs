@@ -38,10 +38,10 @@ namespace TB_RPG_2D.Hero.UI.HeroCard
 
             if (_isSelected)
             {
-                _heroSelectionService.DeselectHeroCard(this);
+                _heroSelectionService.Deselect(HeroData.Id);
                 Deselect();
             }
-            else if (_heroSelectionService.TryAddHeroCardToSelection(this))
+            else if (_heroSelectionService.TrySelect(HeroData.Id))
             {
                 Select();
             }
